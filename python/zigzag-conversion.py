@@ -13,7 +13,7 @@ class Solution:
                 for row in rows:
                     try:
                         row.append(string.pop())
-                    except:
+                    except: 
                         break
                 fill_all = False if numRows > 2 else True
             else:
