@@ -6,13 +6,14 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        if k % len(nums) == 0:
-            if k % 2 == 0:
-                pass
-            else:
+        l = len(nums)
+        if k % l == 0:
+            if k % 2 != 0:
                 nums = reversed(nums)
         else:
-            while k:
-                num = nums.pop()
-                nums.insert(0, num)
+            if k > l:
+                k = k % l
+            while k != 0:
+                val = nums.pop()
+                nums.insert(0, val)
                 k -= 1
