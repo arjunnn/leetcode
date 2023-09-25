@@ -13,7 +13,7 @@ class Solution:
                 for row in rows:
                     try:
                         row.append(string.pop())
-                    except: 
+                    except:
                         break
                 fill_all = False if numRows > 2 else True
             else:
@@ -31,3 +31,22 @@ class Solution:
                 except:
                     break
         return "".join(["".join(row) for row in rows])
+
+
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        if numRows == 1 or numRows >= len(s):
+            return s
+        output = []
+        for _ in range(numRows):
+            output.append("")
+        index = 0
+        step = 1
+        for letter in s:
+            output[index] += letter
+            if index == 0:
+                step = 1
+            elif index == numRows - 1:
+                step = -1
+            index += step
+        return "".join(output)
