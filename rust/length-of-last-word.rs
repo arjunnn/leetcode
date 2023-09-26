@@ -26,4 +26,18 @@ impl Solution {
     }
 }
 
-
+impl Solution {
+    pub fn length_of_last_word(s: String) -> i32 {
+        let mut i = 0;
+        let mut start = false;
+        for j in (0..s.len()).rev() {
+            if &s[j..=j] != " " {
+                i += 1;
+                start = true;
+            } else if &s[j..=j] == " " && start {
+                break;
+            }
+        }
+        return i;
+    }
+}
