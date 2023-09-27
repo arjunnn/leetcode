@@ -7,9 +7,9 @@ impl Solution {
             if nums.contains(&diff) {
                 let diff_index = nums.iter().position(|&x| x == diff).unwrap();
                 if i != diff_index {
-                    return Vec::from([i as i32, diff_index as i32])
+                    return Vec::from([i as i32, diff_index as i32]);
                 }
-            } 
+            }
         }
         Vec::new()
     }
